@@ -107,7 +107,7 @@
 
         ac.addEventListener("cached", function () {
             setCache("cached for offline use", true);
-            waitForTap("CACHED (first run) -- press X or tap to run", go);
+            waitForTap("CACHED (first run) -- tekan X/O (enter) untuk menjalankan", go);
         }, false);
         ac.addEventListener("updateready", function () {
             try { ac.swapCache(); } catch (e) {}
