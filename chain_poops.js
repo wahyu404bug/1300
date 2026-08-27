@@ -2443,11 +2443,11 @@ let allDone = false;
                 + " reached=" + (triplets ? "triplets" : committed ? "commit" : "none"));
         }
 
-        state(allDone ? "ALL DONE"
-              : kv ? "KERNEL R/W -- REBOOT NEEDED"
-              : kernelBase ? "FAILED IN make_karw -- REBOOT"
-              : triplets ? "FAILED IN leak_kqueue (triple free was OK) -- REBOOT"
-              : committed ? "FAILED IN triple free -- REBOOT"
+        state(allDone ? "Berhasil -- Tekan tombol PS"
+              : kv ? "KERNEL R/W -- Tekan tombol PS, RESTART"
+              : kernelBase ? "FAILED IN make_karw -- Tekan tombol PS, RESTART"
+              : triplets ? "FAILED IN leak_kqueue (triple free was OK) -- Tekan tombol PS, RESTART"
+              : committed ? "FAILED IN triple free -- Tekan tombol PS, RESTART"
               : "no commit", allDone ? "ok" : kv ? "warn" : "bad");
     } catch (e) {
         mark("STEP10-FAILED", (e && e.message) ? e.message : String(e));
